@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div id="root" class="col-lg-12"></div>
+<div id="root"></div>
 
 
 <script src="{{asset('js/index.js')}}"></script>

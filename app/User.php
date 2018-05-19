@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         $this->attributes['email'] = strtolower($email);
     }
+
+    public function resumes()
+    {
+        return $this->hasMany(Resume::class);
+    }
 }

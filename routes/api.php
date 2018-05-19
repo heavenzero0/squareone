@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 
 
 //USERS
-
-
 Route::resource('users', 'Api\User\UserController', ['except' => ['create', 'edit']]);
+Route::resource('users.resumes', 'Api\User\UserResumeController', ['except' => ['create', 'edit']]);
+
+
+
+
 
 
 

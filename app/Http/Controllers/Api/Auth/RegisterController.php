@@ -35,7 +35,18 @@ class RegisterController extends ApiController
             ]
         ]);
         $data = json_decode((string)$data->getBody(), true);
-        return response()->json(['data' => $data], 200);
+
+        $email = $request->all();
+        $user = $email['email'];
+        $id = User::where('email', $user)->first()->id;
+        $data['id'] = $id;
+
+        return response()->json([
+            'data' => [
+                'token'=> $data,
+                'email' => $user,
+            ],
+        ], 200);
     }
 
     protected function create(array $data)
